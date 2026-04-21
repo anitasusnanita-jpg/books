@@ -5,16 +5,16 @@ from .models import Book, Category
 
 # Create your views here.
 def home(request):
-    books = Book.objects.filter(status=Book.ACTIVE).order_by('-created_at')
+    books = Book.objects.all()
     context = {
         'books': books
     }
     return render(request, 'books/home.html', context)
 
 def detail(request, id):
-    book = get_object_or_404(Book, id=detail_books , status=Book.ACTIVE)
+    book = get_object_or_404(Book, id=id)
 
     context = {
         'book': book,
     }  
-    return render (request, 'books/detail.html',context)
+    return render (request, 'books/detail.html', context)
