@@ -1,9 +1,8 @@
-
 from django.contrib import admin
 from django.urls import path
-from .views import home, detail 
+from .views import home, detail
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('books/<int:id>/', detail,  name= 'book_detail'),
+    path('home/', home, name='home'),
+    path('detail_book/', detail, name='detail_book'),
 ]
